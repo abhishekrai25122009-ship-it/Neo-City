@@ -1,0 +1,9 @@
+{
+  "name": "neo-city-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix neo-city run dev",
+    "build": "npm --prefix neo-city run build",
+    "preview": "npm --prefix neo-city run preview"
+  }
+}

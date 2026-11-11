@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    /* NEO CITY — ORBITAL COMMAND PALETTE */
+    --color-obsidian-950: #05070a;
+    --color-obsidian-900: #080a0f;
+    --color-obsidian-850: #0d1017;
+    --color-obsidian-800: #121620;
+    --color-ivory: #fcfaf6;
+    --color-ivory-dim: #ded6c8;
+    --color-orange: #ff5500;
+    --color-orange-glow: rgba(255, 85, 0, 0.45);
+    --color-lime: #00e676;
+    --color-lime-glow: rgba(0, 230, 118, 0.4);
+    --color-steel: #64748b;
+    --color-steel-border: rgba(100, 116, 139, 0.28);
+    --color-crimson: #ef4444;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #05070a;
+    color: #fcfaf6;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/* ========================================================
+   NEO CITY — ORBITAL COMMAND INTERFACE SYSTEM
+   Obsidian surfaces, warm ivory data, signal orange command
+   ======================================================== */
+
+.orbital-surface {
+  background: linear-gradient(135deg, rgba(13, 16, 23, 0.96) 0%, rgba(8, 10, 15, 0.98) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.28);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(252, 250, 246, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.orbital-surface-elevated {
+  background: linear-gradient(145deg, rgba(18, 22, 32, 0.97) 0%, rgba(10, 13, 20, 0.98) 100%);
+  border: 1px solid rgba(255, 85, 0, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 85, 0, 0.15), inset 0 1px 0 rgba(252, 250, 246, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.orbital-dock {
+  background: linear-gradient(180deg, rgba(15, 19, 28, 0.96) 0%, rgba(8, 10, 15, 0.98) 100%);
+  border-top: 2px solid #ff5500;
+  border-left: 1px solid rgba(100, 116, 139, 0.35);
+  border-right: 1px solid rgba(100, 116, 139, 0.35);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+  box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.75), 0 0 25px rgba(255, 85, 0, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+/* Chamfered mechanical corner cuts */
+.orbital-cut-corner {
+  clip-path: polygon(
+    0 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.orbital-cut-top-right {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* Mechanical Bracket Borders */
+.orbital-bracket {
+  position: relative;
+}
+.orbital-bracket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #ff5500;
+  border-left: 2px solid #ff5500;
+  pointer-events: none;
+}
+.orbital-bracket::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #ff5500;
+  border-right: 2px solid #ff5500;
+  pointer-events: none;
+}
+
+/* Signal Glow Utilities */
+.glow-signal-orange {
+  box-shadow: 0 0 16px rgba(255, 85, 0, 0.45);
+}
+
+.glow-electric-lime {
+  box-shadow: 0 0 16px rgba(0, 230, 118, 0.4);
+}
+
+.glow-deep-crimson {
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.5);
+}
+
+/* Tactical Technical Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(8, 10, 15, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5500;
+}
